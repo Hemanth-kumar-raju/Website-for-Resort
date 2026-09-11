@@ -1,0 +1,1 @@
+export default function Quote() { return <section className="quote-section"><div className="quote-overlay"></div><div className="quote-content"><p className="eyebrow">A MOMENT TO REMEMBER</p><blockquote>“Luxury is not about more.<br />It is about <em>better.</em>”</blockquote></div></section>; }
