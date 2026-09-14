@@ -54,7 +54,7 @@ button, input, select, textarea { font: inherit; }
   justify-content: space-between;
   padding: 25px 5%;
   color: var(--white);
-  transition: .35s ease;
+  transition: .25s ease;
 }
 
 .header.scrolled {
@@ -225,7 +225,7 @@ button, input, select, textarea { font: inherit; }
 
   letter-spacing: 4px;
 
-  font-size: 13px;
+  font-size: 15px;
 
   font-weight: 500;
 }
@@ -246,7 +246,6 @@ button, input, select, textarea { font: inherit; }
   text-shadow:
     0 4px 25px rgba(0, 0, 0, 0.35);
 }
-
 .hero-content h1 em {
   color: #d7b56d;
 
@@ -256,8 +255,26 @@ button, input, select, textarea { font: inherit; }
 }
 
 /* Hero description */
+.hero-content {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
 .hero-text {
+  font-size: 16px;
+  line-height: 1.8;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.hero-text {
+  text-align: center;
+
   max-width: 650px;
 
   margin: 35px auto;
@@ -354,7 +371,7 @@ button, input, select, textarea { font: inherit; }
 
   text-decoration: none;
 
-  font-size: 11px;
+  font-size: 15px;
 
   letter-spacing: 3px;
 
@@ -476,7 +493,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .eyebrow {
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 4px;
   font-weight: 500;
   color: var(--gold-light);
@@ -501,7 +518,7 @@ h1 em, h2 em, blockquote em {
 .hero-text {
   max-width: 520px;
   margin: 35px 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   color: rgba(255,255,255,.85);
 }
@@ -692,7 +709,7 @@ h1 em, h2 em, blockquote em {
   gap: 12px;
   list-style: none;
   color: #b6b6aa;
-  font-size: 8px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: .8px;
 }
@@ -893,7 +910,7 @@ h1 em, h2 em, blockquote em {
   color: white;
   padding: 13px 14px;
   outline: none;
-  font-size: 11px;
+  font-size: 14px;
   resize: vertical;
 }
 
@@ -908,7 +925,7 @@ h1 em, h2 em, blockquote em {
 .form-message {
   text-align: center;
   color: var(--gold-light);
-  font-size: 11px;
+  font-size: 14px;
   margin-top: 14px;
   min-height: 18px;
 }
@@ -929,7 +946,7 @@ h1 em, h2 em, blockquote em {
 
 .footer h4 {
   color: var(--gold-light);
-  font-size: 9px;
+  font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -938,7 +955,7 @@ h1 em, h2 em, blockquote em {
 .footer-grid > div:not(:first-child) a,
 .footer-grid > div:not(:first-child) p {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 2.2;
 }
 
@@ -952,7 +969,7 @@ h1 em, h2 em, blockquote em {
   border: 1px solid #363730;
   display: grid !important;
   place-items: center;
-  font-size: 8px !important;
+  font-size: 10px !important;
 }
 
 .copyright {
@@ -960,7 +977,7 @@ h1 em, h2 em, blockquote em {
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
