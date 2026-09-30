@@ -1076,3 +1076,645 @@ h1 em, h2 em, blockquote em {
 
   .lightbox { padding: 20px; }
 }
+
+/* =========================================
+   ROOMS & SUITES
+========================================= */
+
+.rooms-section {
+    background: #101210;
+    color: #f5f2ec;
+    padding: 100px 0 110px;
+}
+
+.rooms-container {
+    width: calc(100% - 100px);
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Heading */
+
+.rooms-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 75px;
+}
+
+.rooms-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 5vw, 82px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.rooms-heading h2 em {
+    color: #d8b878;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.rooms-heading p {
+    margin: 10px 40px 0 0;
+
+    max-width: 420px;
+
+    color: #aaa9a3;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Cards */
+
+.rooms-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 32px;
+}
+
+/* Card */
+
+.room-card {
+    background: #181a18;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(216, 184, 120, 0.35);
+}
+
+/* Image */
+
+.room-card-image {
+    position: relative;
+
+    height: 400px;
+
+    overflow: hidden;
+}
+
+.room-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.room-card:hover .room-card-image img {
+    transform: scale(1.04);
+}
+
+/* Price */
+
+.room-price {
+    position: absolute;
+
+    left: 0;
+    bottom: 22px;
+
+    padding: 12px 18px;
+
+    background: rgba(15, 17, 15, 0.9);
+
+    color: #d8b878;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+}
+
+/* Content */
+
+.room-card-content {
+    padding: 43px 42px 38px;
+
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card-content h3 {
+    margin: 0 0 25px;
+
+    color: #f4f1eb;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 39px;
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.room-description {
+    margin: 0 0 27px;
+
+    max-width: 430px;
+
+    color: #999c99;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* Features */
+
+.room-features {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.room-features span {
+    color: #b7b5ae;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+}
+
+.room-features b {
+    margin-left: 10px;
+
+    color: #d8b878;
+
+    font-size: 10px;
+}
+
+/* View Details */
+
+.room-details-button {
+    width: fit-content;
+
+    margin-top: auto;
+
+    padding: 0 0 13px;
+
+    border: none;
+    border-bottom: 1px solid #bda56f;
+
+    background: transparent;
+
+    color: #eeeae2;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 2.2px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.room-details-button span {
+    margin-left: 5px;
+
+    color: #d8b878;
+
+    font-size: 16px;
+
+    transition: margin-left 0.3s ease;
+}
+
+.room-details-button:hover {
+    color: #d8b878;
+    border-color: #d8b878;
+}
+
+.room-details-button:hover span {
+    margin-left: 12px;
+}
+
+
+/* =========================================
+   ROOM DETAILS MODAL
+========================================= */
+
+.room-details-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    overflow-y: auto;
+}
+
+.room-details-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 950px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #181a18;
+
+    border: 1px solid rgba(216, 184, 120, 0.25);
+
+    overflow: hidden;
+
+    animation: roomModalIn 0.35s ease;
+}
+
+@keyframes roomModalIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.room-details-modal > img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 550px;
+
+    object-fit: cover;
+}
+
+.room-modal-content {
+    padding: 60px 45px;
+}
+
+.room-modal-label {
+    color: #d8b878;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.room-modal-content h2 {
+    margin: 12px 0 15px;
+
+    color: #f4f1eb;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 52px;
+    font-weight: 400;
+}
+
+.modal-price {
+    margin-bottom: 30px;
+
+    color: #d8b878;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+}
+
+.room-modal-content > p {
+    color: #a6a8a5;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.modal-features {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+.modal-features span {
+    color: #d5d2ca;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+}
+
+.modal-book-button {
+    padding: 15px 24px;
+
+    border: 1px solid #d8b878;
+
+    background: #d8b878;
+
+    color: #111;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.modal-book-button:hover {
+    background: transparent;
+    color: #d8b878;
+}
+
+.room-modal-close {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.6);
+
+    color: white;
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+.room-modal-close:hover {
+    color: #d8b878;
+
+    border-color: #d8b878;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .rooms-container {
+        width: calc(100% - 50px);
+    }
+
+    .rooms-grid {
+        gap: 20px;
+    }
+
+    .room-card-content {
+        padding: 35px 28px;
+    }
+
+    .room-card-content h3 {
+        font-size: 34px;
+    }
+
+    .room-card-image {
+        height: 340px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .rooms-section {
+        padding: 70px 0;
+    }
+
+    .rooms-heading {
+        display: block;
+
+        margin-bottom: 45px;
+    }
+
+    .rooms-heading p {
+        margin-top: 25px;
+    }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .room-card-image {
+        height: 420px;
+    }
+
+    .room-details-modal {
+        grid-template-columns: 1fr;
+    }
+
+    .room-details-modal > img {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .room-modal-content {
+        padding: 40px 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .rooms-container {
+        width: calc(100% - 30px);
+    }
+
+    .rooms-heading h2 {
+        font-size: 52px;
+    }
+
+    .room-card-image {
+        height: 300px;
+    }
+
+    .room-card-content {
+        padding: 30px 25px;
+    }
+
+    .room-card-content h3 {
+        font-size: 32px;
+    }
+
+    .room-features {
+        gap: 7px;
+    }
+
+    .room-details-overlay {
+        padding: 15px;
+    }
+}
+
+/* =========================================
+  VISUAL JOURNEY IMAGE MODAL
+========================================= */
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    cursor: zoom-out;
+}
+
+.gallery-modal-image {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 88vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+
+    cursor: default;
+
+    animation: galleryImageOpen 0.3s ease;
+}
+
+@keyframes galleryImageOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gallery-modal-close {
+    position: fixed;
+
+    top: 25px;
+    right: 30px;
+
+    z-index: 100000;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    color: white;
+
+    font-size: 32px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.gallery-modal-close:hover {
+    background: white;
+    color: #111;
+}
+
+@media (max-width: 768px) {
+    .gallery-modal {
+        padding: 20px;
+    }
+
+    .gallery-modal-image {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .gallery-modal-close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 27px;
+    }
+}
+
